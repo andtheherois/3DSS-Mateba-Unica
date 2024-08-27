@@ -1,0 +1,581 @@
+;------------------------------------------------------------------------------------------------
+[wpn_mateba_j]:identity_immunities,weapon_probability,default_weapon_params,wpn_mp412_sounds
+        GroupControlSection         = spawn_group
+        discovery_dependency        =
+        $npc                        = on
+        $prefetch                   = 8
+        $spawn                      = "weapons\Desert Eagle"
+        scheduled                   = off
+        cform                       = skeleton
+        
+        class                       = WP_PM
+        slot                        = 1
+        animation_slot              = 1
+        ef_weapon_type              = 5
+        hand_dependence             = 1
+        single_handed               = 1
+        
+        default_to_ruck             = false
+        sprint_allowed              = true
+        
+		icons_texture               = ui\mateba_j_icon
+        inv_grid_height             = 1
+        inv_grid_width              = 2
+        inv_grid_x                  = 0
+        inv_grid_y                  = 0
+        inv_name                    = st_wpn_mateba_j
+        inv_name_short              = st_wpn_mateba_j
+        description                 = st_wpn_mateba_j_descr
+        
+        kind                        = w_pistol
+        inv_weight                  = 0.9
+        cost                        = 32620
+        repair_type                 = pistol
+        
+        hud                         = wpn_mateba_j_hud
+        visual                      = dynamics\weapons\wpn_mateba_j\wpn_mateba_j_world.ogf
+        position                    = -0.021, -0.085, 0.0
+        orientation                 = 0, 0, 0
+        fire_point                  = 0.0, 0.133, 0.22
+        ph_mass                     = 1
+        
+        flame_particles             = weapons\generic_weapon03
+        smoke_particles             = weapons\generic_shoot_00
+        
+		shell_point		 			= 0.0, 0.133, 0.047
+		shell_dir		 			= 0.0, 0.0, 0.4
+		;shell_particles	 		= weapons\45acp
+
+        light_color                 = 0.6, 0.5, 0.3
+        light_range                 = 3.0
+        light_time                  = 0.2
+        light_var_color             = 0.05
+        light_var_range             = 0.5
+        
+        upgrades                    = up_gr_firstab_mp412, up_gr_seconab_mp412
+        installed_upgrades          =
+        upgrade_scheme              = upgrade_scheme_mp412
+        upgr_icon_x                 = 750
+        upgr_icon_y                 = 1850
+        upgr_icon_width             = 150
+        upgr_icon_height            = 100
+        
+        fire_modes                  = 1
+        ammo_class                  = ammo_357_hp_mag, ammo_357_hp_mag_bad, ammo_357_hp_mag_verybad
+        ammo_current                = 90
+        ammo_elapsed                = 12
+        ammo_limit                  = 120
+        ammo_mag_size               = 6
+        
+        scope_status                = 0
+        scope_zoom_factor           = 0
+        
+        silencer_status             = 0
+        silencer_light_color        = 0.6, 0.5, 0.3
+        silencer_light_range        = 0.01
+        silencer_light_time         = 0.2
+        silencer_light_var_color    = 0.05
+        silencer_light_var_range    = 0.5
+        silencer_smoke_particles    = weapons\generic_shoot_00
+        
+        grenade_launcher_status     = 0
+        
+        hit_impulse                 = 45
+        hit_power                   = 0.6, 0.6, 0.6, 0.6
+        hit_type                    = fire_wound
+        fire_distance               = 500
+        bullet_speed                = 430
+        rpm                         = 225
+        rpm_empty_click             = 120
+        
+        use_aim_bullet = false
+        time_to_aim                 = 0.0 ;  1.0
+        zoom_dof                    = -1000, 1.0, 1000
+        zoom_enabled                = true
+        zoom_rotate_time            = 0.25
+        reload_dof                  = 0.0, 0.5, 5, 1.7
+control_inertion_factor = 1.0f
+        crosshair_inertion          = 3.8
+        fire_dispersion_base        = 0.36
+        fire_dispersion_condition_factor = 0.001
+        
+        misfire_start_condition     = 0.7 ;  0.85
+        misfire_start_prob          = 0.007
+        misfire_end_condition       = 0.12
+        misfire_end_prob            = 0.11
+        
+        condition_queue_shot_dec    = 0.0024
+        condition_shot_dec          = 0.0024
+        
+        cam_return                  = 0
+        cam_relax_speed             = 6
+        cam_dispersion              = 3.5
+        cam_dispersion_frac         = 1.0
+        cam_dispersion_inc          = 0.0
+        cam_max_angle               = 50.0
+        cam_max_angle_horz          = 50.0
+        cam_step_angle_horz         = 1.16
+		zoom_cam_dispersion         = 3.0
+        
+        PDM_disp_accel_factor       = 1.055
+        PDM_disp_base               = 0.5
+        PDM_disp_crouch             = 1.0
+        PDM_disp_crouch_no_acc      = 1.0
+        PDM_disp_vel_factor         = 1.05
+        
+        cam_relax_speed_ai          = 120.75
+        holder_fov_modifier         = 1.0
+        holder_range_modifier       = 1.0
+        min_radius                  = 0
+        max_radius                  = 500
+        hit_probability_gd_novice   = 1.00
+        hit_probability_gd_stalker  = 1.00
+        hit_probability_gd_veteran  = 1.00
+        hit_probability_gd_master   = 1.00
+        
+        kill_msg_x                  = 194
+        kill_msg_y                  = 123
+        kill_msg_width              = 46
+        kill_msg_height             = 27
+		weapon_lower_speed			= 0.2
+		
+		
+snd_reload              = weapons\mateba_j\mateba_j_reload
+snd_reload_misfire      = weapons\mateba_j\mateba_j_unjam
+snd_reload_empty        = weapons\mateba_j\mateba_j_reload
+
+scripted_snd_ammo_check                 = weapons\mateba_j\mateba_j_magcheck
+
+;----------------------------------------------------------------------------------------------------------
+[wpn_mateba_j_hud]:hud_base
+        item_visual                 = anomaly_weapons\wpn_mateba_j\wpn_mateba_j_base_hud.ogf
+        attach_place_idx            = 0
+        zoom_hide_crosshair         = true
+        
+        item_position               = 0, 0, 0
+        item_orientation            = 0, 0, 0
+        
+        aim_hud_offset_pos               = -0.073717, 0.014023, -0.064183
+        aim_hud_offset_pos_16x9          = -0.073717, 0.014023, -0.064183
+        aim_hud_offset_rot               = -0.032931, 0.009455, -0.0005
+        aim_hud_offset_rot_16x9          = -0.032931, 0.009455, -0.0005
+		
+        hands_orientation                = 0.486437, -1.908046, 0
+        hands_orientation_16x9           = 0.486437, -1.908046, 0
+        hands_position                   = 0.002816, 0.014893, 0.029671
+        hands_position_16x9              = 0.002816, 0.014893, 0.029671
+		
+        lowered_hud_offset_pos           = 0.02128, -0.155436, 0
+        lowered_hud_offset_pos_16x9      = 0.02128, -0.155436, 0
+        lowered_hud_offset_rot           = -0.59948, 0.042772, 0.1
+        lowered_hud_offset_rot_16x9      = -0.59948, 0.042772, 0.1
+	
+        
+
+        
+		anm_bore                    = mateba_j_inspecting, idle
+        anm_hide                    = mateba_j_holster, holster, 1.2
+        anm_idle                    = mateba_j_idle, idle
+        anm_idle_aim                = mateba_j_idle_aim
+        anm_idle_aim_moving         = mateba_j_idle_aim, idle, 1.6
+        anm_idle_aim_moving_crouch  = mateba_j_idle_aim, idle, 1.2
+        anm_idle_moving             = mateba_j_walk, idle, 1.85
+        anm_idle_sprint             = mateba_j_running, idle, 1.85
+        anm_reload                  = mateba_j_reload, reload
+        anm_shots                   = mateba_j_shooting, shoot, 0.78
+        anm_show                    = mateba_j_draw, idle, 1.2
+		anm_reload_misfire          = mateba_j_unjam, unjam
+		
+		anm_ammo_check              = mateba_j_magcheck, magcheck
+        
+        shell_bone                  = wpn_body
+        shell_point                 = 0, 0, -50
+        
+        fire_bone                   = muzzle
+        fire_point                  = -3, -0.4, 0.4
+ 
+;==================================================================================[MATEBA CUSTOM]==============================================================
+
+[wpn_mateba_j_custom]:identity_immunities,weapon_probability,default_weapon_params,wpn_mp412_sounds
+        GroupControlSection         = spawn_group
+        discovery_dependency        =
+        $npc                        = on
+        $prefetch                   = 8
+        $spawn                      = "weapons\Desert Eagle"
+        scheduled                   = off
+        cform                       = skeleton
+        
+		parent_section 				= wpn_mateba_j_custom
+		
+        class                       = WP_PM
+        slot                        = 1
+        animation_slot              = 1
+        ef_weapon_type              = 5
+        hand_dependence             = 1
+        single_handed               = 1
+        
+        default_to_ruck             = false
+        sprint_allowed              = true
+        
+		icons_texture               = ui\mateba_j_icon
+        inv_grid_height             = 1
+        inv_grid_width              = 2
+        inv_grid_x                  = 0
+        inv_grid_y                  = 1
+        inv_name                    = st_wpn_mateba_j_custom
+        inv_name_short              = st_wpn_mateba_j_custom
+        description                 = st_wpn_mateba_j_custom_descr
+        
+        kind                        = w_pistol
+        inv_weight                  = 1.05
+        cost                        = 41540
+        repair_type                 = pistol
+        
+        hud                         = wpn_mateba_j_custom_hud
+        visual                      = dynamics\weapons\wpn_mateba_j\wpn_mateba_j_c_world.ogf
+        position                    = -0.021, -0.085, 0.0
+        orientation                 = 0, 0, 0
+        fire_point                  = 0.0, 0.133, 0.22
+        ph_mass                     = 1
+        
+        flame_particles             = weapons\generic_weapon03
+        smoke_particles             = weapons\generic_shoot_00
+        
+		shell_point		 			= 0.0, 0.133, 0.047
+		shell_dir		 			= 0.0, 0.0, 0.4
+		;shell_particles	 		= weapons\45acp
+
+        light_color                 = 0.6, 0.5, 0.3
+        light_range                 = 3.0
+        light_time                  = 0.2
+        light_var_color             = 0.05
+        light_var_range             = 0.5
+        
+        upgrades                    = up_gr_firstab_desert_eagle, up_gr_seconab_desert_eagle, up_gr_thirdab_desert_eagle, up_gr_fourtab_desert_eagle, up_gr_fifthab_desert_eagle
+        installed_upgrades          =
+        upgrade_scheme              = upgrade_scheme_desert_eagle
+        upgr_icon_x                 = 750
+        upgr_icon_y                 = 1850
+        upgr_icon_width             = 150
+        upgr_icon_height            = 100
+        
+        fire_modes                  = 1
+        ammo_class                  = ammo_357_hp_mag, ammo_357_hp_mag_bad, ammo_357_hp_mag_verybad
+        ammo_current                = 90
+        ammo_elapsed                = 12
+        ammo_limit                  = 120
+        ammo_mag_size               = 6
+        
+scopes                                   = ac10632, c-more, d0cter, aim_low, deltapoint, compm4s, kemper, leupold, monstrum
+scope_status                             = 0
+scope_zoom_factor                        = 0
+
+        
+        silencer_status             = 0
+        silencer_light_color        = 0.6, 0.5, 0.3
+        silencer_light_range        = 0.01
+        silencer_light_time         = 0.2
+        silencer_light_var_color    = 0.05
+        silencer_light_var_range    = 0.5
+        silencer_smoke_particles    = weapons\generic_shoot_00
+        
+        grenade_launcher_status     = 0
+        
+        hit_impulse                 = 45
+        hit_power                   = 0.6, 0.6, 0.6, 0.6
+        hit_type                    = fire_wound
+        fire_distance               = 600
+        bullet_speed                = 475
+        rpm                         = 250
+        rpm_empty_click             = 120
+        
+        use_aim_bullet = false
+        time_to_aim                 = 0.0 ;  1.0
+        zoom_dof                    = -1000, 1.0, 1000
+        zoom_enabled                = true
+        zoom_rotate_time            = 0.25
+        reload_dof                  = 0.0, 0.5, 5, 1.7
+control_inertion_factor = 1.0f
+        crosshair_inertion          = 3.8
+        fire_dispersion_base        = 0.25
+        fire_dispersion_condition_factor = 0.001
+        
+        misfire_start_condition     = 0.7 ;  0.85
+        misfire_start_prob          = 0.007
+        misfire_end_condition       = 0.12
+        misfire_end_prob            = 0.11
+        
+        condition_queue_shot_dec    = 0.0024
+        condition_shot_dec          = 0.0024
+        
+        cam_return                  = 0
+        cam_relax_speed             = 6
+        cam_dispersion              = 3.5
+        cam_dispersion_frac         = 1.0
+        cam_dispersion_inc          = 0.0
+        cam_max_angle               = 50.0
+        cam_max_angle_horz          = 50.0
+        cam_step_angle_horz         = 1.16
+		zoom_cam_dispersion         = 3.0
+        
+        PDM_disp_accel_factor       = 1.055
+        PDM_disp_base               = 0.4
+        PDM_disp_crouch             = 1.0
+        PDM_disp_crouch_no_acc      = 1.0
+        PDM_disp_vel_factor         = 1.05
+        
+        cam_relax_speed_ai          = 120.75
+        holder_fov_modifier         = 1.0
+        holder_range_modifier       = 1.0
+        min_radius                  = 0
+        max_radius                  = 500
+        hit_probability_gd_novice   = 1.00
+        hit_probability_gd_stalker  = 1.00
+        hit_probability_gd_veteran  = 1.00
+        hit_probability_gd_master   = 1.00
+        
+        kill_msg_x                  = 194
+        kill_msg_y                  = 123
+        kill_msg_width              = 46
+        kill_msg_height             = 27
+		weapon_lower_speed			= 0.2
+		
+		
+snd_reload              = weapons\mateba_j\mateba_j_reload
+snd_reload_misfire      = weapons\mateba_j\mateba_j_unjam
+snd_reload_empty        = weapons\mateba_j\mateba_j_reload
+
+scripted_snd_ammo_check                 = weapons\mateba_j\mateba_j_magcheck
+
+lewd_lens_hide_enabled       = true
+lewd_lens_hide_bone          = lens
+lewd_lens_hide_delays        = 0.1,0
+lewd_lens_hide_aim_mode      = true, ture, false	
+;--------------------------------------------------------------------------------------------------
+[wpn_mateba_j_custom_hud]:hud_base
+        item_visual                 = anomaly_weapons\wpn_mateba_j\wpn_mateba_j_hud.ogf
+        attach_place_idx            = 0
+        zoom_hide_crosshair         = true
+        
+        item_position               = 0, 0, 0
+        item_orientation            = 0, 0, 0
+        
+        aim_hud_offset_pos               = -0.073717, 0.014023, -0.064183
+        aim_hud_offset_pos_16x9          = -0.073717, 0.014023, -0.064183
+        aim_hud_offset_rot               = -0.032931, 0.009455, -0.0005
+        aim_hud_offset_rot_16x9          = -0.032931, 0.009455, -0.0005
+		
+        hands_orientation                = 0.486437, -1.908046, 0
+        hands_orientation_16x9           = 0.486437, -1.908046, 0
+        hands_position                   = 0.002816, 0.014893, 0.029671
+        hands_position_16x9              = 0.002816, 0.014893, 0.029671
+		
+        lowered_hud_offset_pos           = 0.02128, -0.155436, 0
+        lowered_hud_offset_pos_16x9      = 0.02128, -0.155436, 0
+        lowered_hud_offset_rot           = -0.59948, 0.042772, 0.1
+        lowered_hud_offset_rot_16x9      = -0.59948, 0.042772, 0.1
+	
+        
+
+        
+		anm_bore                    = mateba_j_inspecting, idle
+        anm_hide                    = mateba_j_holster, holster, 1.2
+        anm_idle                    = mateba_j_idle, idle
+        anm_idle_aim                = mateba_j_idle_aim
+        anm_idle_aim_moving         = mateba_j_idle_aim, idle, 1.6
+        anm_idle_aim_moving_crouch  = mateba_j_idle_aim, idle, 1.2
+        anm_idle_moving             = mateba_j_walk, idle, 1.85
+        anm_idle_sprint             = mateba_j_running, idle, 1.85
+        anm_reload                  = mateba_j_reload, reload
+        anm_shots                   = mateba_j_shooting, shoot, 0.78
+        anm_show                    = mateba_j_draw, idle, 1.2
+		anm_reload_misfire          = mateba_j_unjam, unjam
+		
+		anm_ammo_check              = mateba_j_magcheck, magcheck
+        
+        shell_bone                  = wpn_body
+        shell_point                 = 0, 0, -50
+        
+        fire_bone                   = muzzle
+        fire_point                  = -3, -0.4, 0.4
+		
+;-------------------------------------------------------------------------------------Addons------------
+[wpn_mateba_j_custom_ac10632]:wpn_mateba_j_custom
+
+inv_weight			= 1.15
+
+hud                     	= wpn_mateba_j_custom_ac10632_hud
+
+1icon_layer			    = ac10632
+1icon_layer_x			= 19
+1icon_layer_y			= -28              
+
+[wpn_mateba_j_custom_ac10632_hud]:wpn_mateba_j_custom_hud
+item_visual                 = anomaly_weapons\wpn_mateba_j\wpn_mateba_j_ac10632_hud.ogf
+anm_reload                  = mateba_j_reload_alt, reload_alt
+anm_reload_misfire          = mateba_j_unjam_alt, unjam
+        aim_hud_offset_pos               = -0.069229, -0.021309, -0.064183
+        aim_hud_offset_pos_16x9          = -0.069229, -0.021309, -0.064183
+        aim_hud_offset_rot               = -0.034209, -0.004769, -0.0005
+        aim_hud_offset_rot_16x9          = -0.034209, -0.004769, -0.0005
+;-----------------------------------------------------------------------------
+[wpn_mateba_j_custom_c-more]:wpn_mateba_j_custom
+hud                     	= wpn_mateba_j_custom_c-more_hud
+inv_weight			= 1.15
+
+1icon_layer			    = c-more
+1icon_layer_x			= 19
+1icon_layer_y			= -28              
+
+visual = dynamics\weapons\wpn_mateba_j\wpn_mateba_j_world.ogf
+
+[wpn_mateba_j_custom_c-more_hud]:wpn_mateba_j_custom_hud
+item_visual                 = anomaly_weapons\wpn_mateba_j\wpn_mateba_j_c-more_hud.ogf
+anm_reload                  = mateba_j_reload_alt, reload_alt
+anm_reload_misfire          = mateba_j_unjam_alt, unjam
+        aim_hud_offset_pos               = -0.068966, -0.018182, -0.064183
+        aim_hud_offset_pos_16x9          = -0.068966, -0.018182, -0.064183
+        aim_hud_offset_rot               = -0.03499, -0.006287, -0.0005
+        aim_hud_offset_rot_16x9          = -0.03499, -0.006287, -0.0005
+;---------------------------------------------------------------------------------
+[wpn_mateba_j_custom_aim_low]:wpn_mateba_j_custom
+hud						= wpn_mateba_j_custom_aim_low_hud
+inv_weight			= 1.15
+
+1icon_layer			    = aim_low
+1icon_layer_x			= 17
+1icon_layer_y			= -24 
+
+[wpn_mateba_j_custom_aim_low_hud]:wpn_mateba_j_custom_hud
+item_visual                 = anomaly_weapons\wpn_mateba_j\wpn_mateba_j_aim_low_hud.ogf
+anm_reload                  = mateba_j_reload_alt, reload_alt
+anm_reload_misfire          = mateba_j_unjam_alt, unjam
+        aim_hud_offset_pos               = -0.073028, -0.004962, -0.064183
+        aim_hud_offset_pos_16x9          = -0.073028, -0.004962, -0.064183
+        aim_hud_offset_rot               = -0.029168, 0.005996, -0.0005
+        aim_hud_offset_rot_16x9          = -0.029168, 0.005996, -0.0005
+;-------------------------------------------------------------------------------------------------------------------------------
+[wpn_mateba_j_custom_d0cter]:wpn_mateba_j_custom
+hud						= wpn_mateba_j_custom_d0cter_hud
+inv_weight			= 1.15
+
+1icon_layer			    = d0cter
+1icon_layer_x			= 17
+1icon_layer_y			= -28 
+
+[wpn_mateba_j_custom_d0cter_hud]:wpn_mateba_j_custom_hud
+item_visual                 = anomaly_weapons\wpn_mateba_j\wpn_mateba_j_docter_hud.ogf
+anm_reload                  = mateba_j_reload_alt, reload_alt
+anm_reload_misfire          = mateba_j_unjam_alt, unjam
+        aim_hud_offset_pos               = -0.07255, -0.005609, -0.064183
+        aim_hud_offset_pos_16x9          = -0.07255, -0.005609, -0.064183
+        aim_hud_offset_rot               = -0.033144, 0.00274, -0.0005
+        aim_hud_offset_rot_16x9          = -0.033144, 0.00274, -0.0005
+;---------------------------------------------------------------------------------------------------
+[wpn_mateba_j_custom_deltapoint]:wpn_mateba_j_custom
+hud					= wpn_mateba_j_custom_deltapoint_hud
+inv_weight			= 1.15
+
+1icon_layer                              = deltapoint
+1icon_layer_x			= 17
+1icon_layer_y			= -26 
+
+[wpn_mateba_j_custom_deltapoint_hud]:wpn_mateba_j_custom_hud
+item_visual                 = anomaly_weapons\wpn_mateba_j\wpn_mateba_j_deltapoint_hud.ogf
+anm_reload                  = mateba_j_reload_alt, reload_alt
+anm_reload_misfire          = mateba_j_unjam_alt, unjam
+        aim_hud_offset_pos               = -0.071115, -0.012967, -0.064183
+        aim_hud_offset_pos_16x9          = -0.071115, -0.012967, -0.064183
+        aim_hud_offset_rot               = -0.033925, -0.000247, -0.0005
+        aim_hud_offset_rot_16x9          = -0.033925, -0.000247, -0.0005
+;---------------------------------------------------------------------------------------------------
+[wpn_mateba_j_custom_compm4s]:wpn_mateba_j_custom
+hud					= wpn_mateba_j_custom_compm4s_hud
+inv_weight			= 1.3
+
+1icon_layer                              = compm4s
+1icon_layer_x			= 19
+1icon_layer_y			= -37  
+
+inv_weight                               = 2.240
+
+[wpn_mateba_j_custom_compm4s_hud]:wpn_mateba_j_custom_hud
+item_visual                 = anomaly_weapons\wpn_mateba_j\wpn_mateba_j_compm4s_hud.ogf
+anm_reload                  = mateba_j_reload_alt, reload_alt
+anm_reload_misfire          = mateba_j_unjam_alt, unjam
+        aim_hud_offset_pos               = -0.073556, -0.014622, -0.064183
+        aim_hud_offset_pos_16x9          = -0.073556, -0.014622, -0.064183
+        aim_hud_offset_rot               = -0.029807, 0.008974, -0.0005
+        aim_hud_offset_rot_16x9          = -0.029807, 0.008974, -0.0005
+;-----------------------------------------------------------------------------------------------------
+[wpn_mateba_j_custom_kemper]:wpn_mateba_j_custom
+hud				= wpn_mateba_j_custom_kemper_hud
+inv_weight			= 1.24
+
+1icon_layer			    = kemper
+1icon_layer_x			= 17
+1icon_layer_y			= -31  
+
+
+[wpn_mateba_j_custom_kemper_hud]:wpn_mateba_j_custom_hud
+item_visual                 = anomaly_weapons\wpn_mateba_j\wpn_mateba_j_kemper_hud.ogf
+anm_reload                  = mateba_j_reload_alt, reload_alt
+anm_reload_misfire          = mateba_j_unjam_alt, unjam
+        aim_hud_offset_pos               = -0.071637, -0.027495, -0.064183
+        aim_hud_offset_pos_16x9          = -0.071637, -0.027495, -0.064183
+        aim_hud_offset_rot               = -0.0364, 0.000297, -0.0005
+        aim_hud_offset_rot_16x9          = -0.0364, 0.000297, -0.0005
+;------------------------------------------------------------------------------------------------
+[wpn_mateba_j_custom_leupold]:wpn_mateba_j_custom
+hud					= wpn_mateba_j_custom_leupold_hud
+inv_weight			= 1.62
+
+1icon_layer                              = leupold
+1icon_layer_x                            = 10
+1icon_layer_y                            = -30
+
+
+scope_status                                       = 1
+scope_zoom_factor                                  = 15
+zoom_rotate_time                                   = 0.25
+scope_texture                                      = 
+scope_dynamic_zoom                                 = on
+
+	3ds_shadow_project = 4.7
+	
+[wpn_mateba_j_custom_leupold_hud]:wpn_mateba_j_custom_hud
+item_visual                 = anomaly_weapons\wpn_mateba_j\wpn_mateba_j_leupold_hud.ogf
+anm_reload                  = mateba_j_reload_alt, reload_alt
+anm_reload_misfire          = mateba_j_unjam_alt, unjam
+
+        aim_hud_offset_pos               = -0.072587, -0.005462, -0.154032
+        aim_hud_offset_pos_16x9          = -0.072587, -0.005462, -0.154032
+        aim_hud_offset_rot               = -0.028518, 0.004868, -0.0005
+        aim_hud_offset_rot_16x9          = -0.028518, 0.004868, -0.0005
+;------------------------------------------------------------------------------------------------		
+[wpn_mateba_j_custom_monstrum]:wpn_mateba_j_custom
+hud					= wpn_mateba_j_custom_monstrum_hud
+inv_weight			= 1.62
+
+1icon_layer                              = monstrum
+1icon_layer_x                            = 1
+1icon_layer_y                            = -37
+
+
+scope_status                                       = 1
+scope_zoom_factor                                  = 60
+zoom_rotate_time                                   = 0.25
+scope_texture                                      = 
+
+
+[wpn_mateba_j_custom_monstrum_hud]:wpn_mateba_j_custom_hud
+item_visual                 = anomaly_weapons\wpn_mateba_j\wpn_mateba_j_monstrum_hud.ogf
+
+anm_reload                  = mateba_j_reload_alt, reload_alt
+anm_reload_misfire          = mateba_j_unjam_alt, unjam
+
+        aim_hud_offset_pos               = -0.072503, -0.014937, -0.140436
+        aim_hud_offset_pos_16x9          = -0.072503, -0.014937, -0.140436
+        aim_hud_offset_rot               = -0.029661, 0.004894, -0.0005
+        aim_hud_offset_rot_16x9          = -0.029661, 0.004894, -0.0005
+;------------------------------------------------------------------------------------------------

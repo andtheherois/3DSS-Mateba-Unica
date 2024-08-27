@@ -1,0 +1,15 @@
+<string_table>
+	<string id="st_wpn_mateba_j">
+		<text>Unica 6</text>
+	</string>
+	<string id="st_wpn_mateba_j_descr">
+		<text>The Mateba Unica 6 is a unique and innovative semi-automatic revolver designed by Emilio Ghisoni in Italy. Unlike traditional revolvers, the Mateba Unica 6 utilizes the recoil energy to automatically rotate the cylinder and cock the hammer, resulting in faster follow-up shots. Its distinctive appearance features a barrel aligned with the bottom cylinder, which helps reduce muzzle flip and improve accuracy by lowering the bore axis. Available in various calibers, including .357 Magnum and .44 Magnum, the Mateba Unica 6 combines the reliability of a revolver with the rapid-fire capability of a semi-automatic, making it a remarkable piece of engineering and a collector's favorite.</text>
+	</string>
+
+	<string id="st_wpn_mateba_j_custom">
+		<text>Unica 6 Custom</text>
+	</string>
+	<string id="st_wpn_mateba_j_custom_descr">
+		<text>The Mateba Unica 6 is a unique and innovative semi-automatic revolver designed by Emilio Ghisoni in Italy. This Unica has been modified to allow use of a rail mount. Internal modifications and the additon of a robust compensator have given this gun enhanced performance.</text>
+	</string>
+</string_table>
