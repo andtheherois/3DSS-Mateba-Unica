@@ -144,7 +144,7 @@ snd_reload              = weapons\mateba_j\mateba_j_reload
 snd_reload_misfire      = weapons\mateba_j\mateba_j_unjam
 snd_reload_empty        = weapons\mateba_j\mateba_j_reload
 
-scripted_snd_ammo_check                 = weapons\mateba_j\mateba_j_magcheck
+snd_ammo_check                 = weapons\mateba_j\mateba_j_magcheck
 
 ;----------------------------------------------------------------------------------------------------------
 [wpn_mateba_j_hud]:hud_base
@@ -157,8 +157,8 @@ scripted_snd_ammo_check                 = weapons\mateba_j\mateba_j_magcheck
         
         aim_hud_offset_pos               = -0.073717, 0.014023, -0.064183
         aim_hud_offset_pos_16x9          = -0.073717, 0.014023, -0.064183
-        aim_hud_offset_rot               = -0.032931, 0.009455, -0.0005
-        aim_hud_offset_rot_16x9          = -0.032931, 0.009455, -0.0005
+        aim_hud_offset_rot               = -0.032949, 0.009572, -0.0005
+        aim_hud_offset_rot_16x9          = -0.032949, 0.009572, -0.0005
 		
         hands_orientation                = 0.486437, -1.908046, 0
         hands_orientation_16x9           = 0.486437, -1.908046, 0
@@ -177,12 +177,12 @@ scripted_snd_ammo_check                 = weapons\mateba_j\mateba_j_magcheck
         anm_hide                    = mateba_j_holster, holster, 1.2
         anm_idle                    = mateba_j_idle, idle
         anm_idle_aim                = mateba_j_idle_aim
-        anm_idle_aim_moving         = mateba_j_idle_aim, idle, 1.6
-        anm_idle_aim_moving_crouch  = mateba_j_idle_aim, idle, 1.2
+        anm_idle_aim_moving         = mateba_j_idle_aim, idle, 1.4
+        anm_idle_aim_moving_crouch  = mateba_j_idle_aim, idle, 
         anm_idle_moving             = mateba_j_walk, idle, 1.85
         anm_idle_sprint             = mateba_j_running, idle, 1.85
         anm_reload                  = mateba_j_reload, reload
-        anm_shots                   = mateba_j_shooting, shoot, 0.78
+        anm_shots                   = mateba_j_shooting, shoot, 0.85
         anm_show                    = mateba_j_draw, idle, 1.2
 		anm_reload_misfire          = mateba_j_unjam, unjam
 		
@@ -192,7 +192,7 @@ scripted_snd_ammo_check                 = weapons\mateba_j\mateba_j_magcheck
         shell_point                 = 0, 0, -50
         
         fire_bone                   = muzzle
-        fire_point                  = -3, -0.4, 0.4
+        fire_point                  = -0.01, 0, -0.007
  
 ;==================================================================================[MATEBA CUSTOM]==============================================================
 
@@ -266,7 +266,7 @@ scripted_snd_ammo_check                 = weapons\mateba_j\mateba_j_magcheck
         ammo_limit                  = 120
         ammo_mag_size               = 6
         
-scopes                                   = ac10632, c-more, d0cter, aim_low, deltapoint, compm4s, kemper, leupold, monstrum, t12
+scopes                                   = ac10632, c-more, d0cter, aim_low, deltapoint, compm4s, kemper, leupold, monstrum, t12, march_f_shorty, p1x42, pk6, rmr
 scope_status                             = 0
 scope_zoom_factor                        = 0
 
@@ -345,7 +345,7 @@ snd_reload              = weapons\mateba_j\mateba_j_reload
 snd_reload_misfire      = weapons\mateba_j\mateba_j_unjam
 snd_reload_empty        = weapons\mateba_j\mateba_j_reload
 
-scripted_snd_ammo_check                 = weapons\mateba_j\mateba_j_magcheck
+snd_ammo_check                 = weapons\mateba_j\mateba_j_magcheck
 
 lewd_lens_hide_enabled       = true
 lewd_lens_hide_bone          = lens
@@ -362,8 +362,8 @@ lewd_lens_hide_aim_mode      = true, ture, false
         
         aim_hud_offset_pos               = -0.073717, 0.014023, -0.064183
         aim_hud_offset_pos_16x9          = -0.073717, 0.014023, -0.064183
-        aim_hud_offset_rot               = -0.032931, 0.009455, -0.0005
-        aim_hud_offset_rot_16x9          = -0.032931, 0.009455, -0.0005
+        aim_hud_offset_rot               = -0.032949, 0.009572, -0.0005
+        aim_hud_offset_rot_16x9          = -0.032949, 0.009572, -0.0005
 		
         hands_orientation                = 0.486437, -1.908046, 0
         hands_orientation_16x9           = 0.486437, -1.908046, 0
@@ -388,7 +388,7 @@ lewd_lens_hide_aim_mode      = true, ture, false
         anm_idle_sprint             = mateba_j_running, idle, 1.85
         anm_reload                  = mateba_j_reload, reload
         anm_shots                   = mateba_j_shooting, shoot, 0.78
-        anm_show                    = mateba_j_draw, idle, 1.2
+        anm_show                    = mateba_j_draw, idle, 1.4
 		anm_reload_misfire          = mateba_j_unjam, unjam
 		
 		anm_ammo_check              = mateba_j_magcheck, magcheck
@@ -397,160 +397,217 @@ lewd_lens_hide_aim_mode      = true, ture, false
         shell_point                 = 0, 0, -50
         
         fire_bone                   = muzzle
-        fire_point                  = -3, -0.4, 0.4
+        fire_point                  = -0.01, 0, -0.007
 		
 ;-------------------------------------------------------------------------------------Addons------------
 [wpn_mateba_j_custom_ac10632]:wpn_mateba_j_custom
+hud                     	= wpn_mateba_j_custom_ac10632_hud
 
 inv_weight			= 1.15
 
-hud                     	= wpn_mateba_j_custom_ac10632_hud
-
-1icon_layer			    = ac10632
-1icon_layer_x			= 19
-1icon_layer_y			= -28              
+1icon_layer			    = ac10632_x
+1icon_layer_x			= 6
+1icon_layer_y			= -33	              
 
 [wpn_mateba_j_custom_ac10632_hud]:wpn_mateba_j_custom_hud
 item_visual                 = anomaly_weapons\wpn_mateba_j\wpn_mateba_j_ac10632_hud.ogf
-anm_reload                  = mateba_j_reload_alt, reload_alt
 anm_reload_misfire          = mateba_j_unjam_alt, unjam
-        aim_hud_offset_pos               = -0.069229, -0.021309, -0.064183
-        aim_hud_offset_pos_16x9          = -0.069229, -0.021309, -0.064183
-        aim_hud_offset_rot               = -0.034209, -0.004769, -0.0005
-        aim_hud_offset_rot_16x9          = -0.034209, -0.004769, -0.0005
+
+        aim_hud_offset_pos               = -0.074877, -0.021664, -0.06
+        aim_hud_offset_pos_16x9          = -0.074877, -0.021664, -0.06
+        aim_hud_offset_rot               = -0.033499, 0.010333, -0.0005
+        aim_hud_offset_rot_16x9          = -0.033499, 0.010333, -0.0005
 ;-----------------------------------------------------------------------------
 [wpn_mateba_j_custom_c-more]:wpn_mateba_j_custom
 hud                     	= wpn_mateba_j_custom_c-more_hud
+
 inv_weight			= 1.15
 
-1icon_layer			    = c-more
-1icon_layer_x			= 19
-1icon_layer_y			= -28              
-
-visual = dynamics\weapons\wpn_mateba_j\wpn_mateba_j_world.ogf
+1icon_layer			    = c-more_x
+1icon_layer_x			= 8
+1icon_layer_y			= -29              
 
 [wpn_mateba_j_custom_c-more_hud]:wpn_mateba_j_custom_hud
 item_visual                 = anomaly_weapons\wpn_mateba_j\wpn_mateba_j_c-more_hud.ogf
-anm_reload                  = mateba_j_reload_alt, reload_alt
 anm_reload_misfire          = mateba_j_unjam_alt, unjam
-        aim_hud_offset_pos               = -0.068966, -0.018182, -0.064183
-        aim_hud_offset_pos_16x9          = -0.068966, -0.018182, -0.064183
-        aim_hud_offset_rot               = -0.03499, -0.006287, -0.0005
-        aim_hud_offset_rot_16x9          = -0.03499, -0.006287, -0.0005
+
+        aim_hud_offset_pos               = -0.07314, -0.020406, -0.06
+        aim_hud_offset_pos_16x9          = -0.07314, -0.020406, -0.06
+        aim_hud_offset_rot               = -0.034211, 0.008683, -0.0005
+        aim_hud_offset_rot_16x9          = -0.034211, 0.008683, -0.0005
 ;---------------------------------------------------------------------------------
 [wpn_mateba_j_custom_aim_low]:wpn_mateba_j_custom
 hud						= wpn_mateba_j_custom_aim_low_hud
+
 inv_weight			= 1.15
 
-1icon_layer			    = aim_low
-1icon_layer_x			= 17
-1icon_layer_y			= -24 
+1icon_layer			    = aim_low_x
+1icon_layer_x			= 8
+1icon_layer_y			= -29 
 
 [wpn_mateba_j_custom_aim_low_hud]:wpn_mateba_j_custom_hud
 item_visual                 = anomaly_weapons\wpn_mateba_j\wpn_mateba_j_aim_low_hud.ogf
-anm_reload                  = mateba_j_reload_alt, reload_alt
 anm_reload_misfire          = mateba_j_unjam_alt, unjam
-        aim_hud_offset_pos               = -0.073028, -0.004962, -0.064183
-        aim_hud_offset_pos_16x9          = -0.073028, -0.004962, -0.064183
-        aim_hud_offset_rot               = -0.029168, 0.005996, -0.0005
-        aim_hud_offset_rot_16x9          = -0.029168, 0.005996, -0.0005
+
+        aim_hud_offset_pos               = -0.073755, -0.006996, -0.06
+        aim_hud_offset_pos_16x9          = -0.073755, -0.006996, -0.06
+        aim_hud_offset_rot               = -0.033558, 0.009282, -0.0005
+        aim_hud_offset_rot_16x9          = -0.033558, 0.009282, -0.0005
 ;-------------------------------------------------------------------------------------------------------------------------------
 [wpn_mateba_j_custom_d0cter]:wpn_mateba_j_custom
 hud						= wpn_mateba_j_custom_d0cter_hud
+
 inv_weight			= 1.15
 
-1icon_layer			    = d0cter
-1icon_layer_x			= 17
-1icon_layer_y			= -28 
+1icon_layer			    = d0cter_x
+1icon_layer_x			= 8
+1icon_layer_y			= -31 
 
 [wpn_mateba_j_custom_d0cter_hud]:wpn_mateba_j_custom_hud
 item_visual                 = anomaly_weapons\wpn_mateba_j\wpn_mateba_j_docter_hud.ogf
-anm_reload                  = mateba_j_reload_alt, reload_alt
 anm_reload_misfire          = mateba_j_unjam_alt, unjam
-        aim_hud_offset_pos               = -0.07255, -0.005609, -0.064183
-        aim_hud_offset_pos_16x9          = -0.07255, -0.005609, -0.064183
-        aim_hud_offset_rot               = -0.033144, 0.00274, -0.0005
-        aim_hud_offset_rot_16x9          = -0.033144, 0.00274, -0.0005
+
+        aim_hud_offset_pos               = -0.073633, -0.006213, -0.06
+        aim_hud_offset_pos_16x9          = -0.073633, -0.006213, -0.06
+        aim_hud_offset_rot               = -0.033338, 0.009055, -0.0005
+        aim_hud_offset_rot_16x9          = -0.033338, 0.009055, -0.0005
 ;---------------------------------------------------------------------------------------------------
 [wpn_mateba_j_custom_deltapoint]:wpn_mateba_j_custom
 hud					= wpn_mateba_j_custom_deltapoint_hud
+
 inv_weight			= 1.15
 
-1icon_layer                              = deltapoint
-1icon_layer_x			= 17
+1icon_layer             = deltapoint_x
+1icon_layer_x			= 8
 1icon_layer_y			= -26 
 
 [wpn_mateba_j_custom_deltapoint_hud]:wpn_mateba_j_custom_hud
 item_visual                 = anomaly_weapons\wpn_mateba_j\wpn_mateba_j_deltapoint_hud.ogf
-anm_reload                  = mateba_j_reload_alt, reload_alt
 anm_reload_misfire          = mateba_j_unjam_alt, unjam
-        aim_hud_offset_pos               = -0.071115, -0.012967, -0.064183
-        aim_hud_offset_pos_16x9          = -0.071115, -0.012967, -0.064183
-        aim_hud_offset_rot               = -0.033925, -0.000247, -0.0005
-        aim_hud_offset_rot_16x9          = -0.033925, -0.000247, -0.0005
+
+        aim_hud_offset_pos               = -0.074069, -0.014348, -0.06
+        aim_hud_offset_pos_16x9          = -0.074069, -0.014348, -0.06
+        aim_hud_offset_rot               = -0.035689, 0.009423, -0.0005
+        aim_hud_offset_rot_16x9          = -0.035689, 0.009423, -0.0005
 ;---------------------------------------------------------------------------------------------------
 [wpn_mateba_j_custom_compm4s]:wpn_mateba_j_custom
 hud					= wpn_mateba_j_custom_compm4s_hud
+
 inv_weight			= 1.3
 
-1icon_layer                              = compm4s
-1icon_layer_x			= 19
-1icon_layer_y			= -37  
-
-inv_weight                               = 2.240
+1icon_layer             = compm4s_x
+1icon_layer_x			= 10
+1icon_layer_y			= -39  
 
 [wpn_mateba_j_custom_compm4s_hud]:wpn_mateba_j_custom_hud
 item_visual                 = anomaly_weapons\wpn_mateba_j\wpn_mateba_j_compm4s_hud.ogf
-anm_reload                  = mateba_j_reload_alt, reload_alt
 anm_reload_misfire          = mateba_j_unjam_alt, unjam
-        aim_hud_offset_pos               = -0.073556, -0.014622, -0.064183
-        aim_hud_offset_pos_16x9          = -0.073556, -0.014622, -0.064183
-        aim_hud_offset_rot               = -0.029807, 0.008974, -0.0005
-        aim_hud_offset_rot_16x9          = -0.029807, 0.008974, -0.0005
+
+        aim_hud_offset_pos               = -0.073686, -0.014532, -0.064183
+        aim_hud_offset_pos_16x9          = -0.073686, -0.014532, -0.064183
+        aim_hud_offset_rot               = -0.034083, 0.009394, -0.0005
+        aim_hud_offset_rot_16x9          = -0.034083, 0.009394, -0.0005
 ;-----------------------------------------------------------------------------------------------------
 [wpn_mateba_j_custom_kemper]:wpn_mateba_j_custom
 hud				= wpn_mateba_j_custom_kemper_hud
+
 inv_weight			= 1.2
 
-1icon_layer			    = kemper
-1icon_layer_x			= 17
-1icon_layer_y			= -31  
+1icon_layer			    = kemper_x
+1icon_layer_x			= -1
+1icon_layer_y			= -34  
 
 [wpn_mateba_j_custom_kemper_hud]:wpn_mateba_j_custom_hud
 item_visual                 = anomaly_weapons\wpn_mateba_j\wpn_mateba_j_kemper_hud.ogf
-anm_reload                  = mateba_j_reload_alt, reload_alt
 anm_reload_misfire          = mateba_j_unjam_alt, unjam
-        aim_hud_offset_pos               = -0.071637, -0.027495, -0.064183
-        aim_hud_offset_pos_16x9          = -0.071637, -0.027495, -0.064183
-        aim_hud_offset_rot               = -0.0364, 0.000297, -0.0005
-        aim_hud_offset_rot_16x9          = -0.0364, 0.000297, -0.0005
+
+        aim_hud_offset_pos               = -0.074103, -0.027591, -0.06
+        aim_hud_offset_pos_16x9          = -0.074103, -0.027591, -0.06
+        aim_hud_offset_rot               = -0.034618, 0.009361, -0.0005
+        aim_hud_offset_rot_16x9          = -0.034618, 0.009361, -0.0005
+;-----------------------------------------------------------------------------------------------------
+[wpn_mateba_j_custom_pk6]:wpn_mateba_j_custom
+hud				= wpn_mateba_j_custom_pk6_hud
+
+inv_weight			= 1.2
+
+1icon_layer			    = pk6_x
+1icon_layer_x			= 7
+1icon_layer_y			= -32  
+
+[wpn_mateba_j_custom_pk6_hud]:wpn_mateba_j_custom_hud
+item_visual                 = anomaly_weapons\wpn_mateba_j\wpn_mateba_j_pk6_hud.ogf
+anm_reload_misfire          = mateba_j_unjam_alt, unjam
+
+        aim_hud_offset_pos               = -0.073606, -0.011772, -0.06
+        aim_hud_offset_pos_16x9          = -0.073606, -0.011772, -0.06
+        aim_hud_offset_rot               = -0.03426, 0.009047, -0.0005
+        aim_hud_offset_rot_16x9          = -0.03426, 0.009047, -0.0005
+;-----------------------------------------------------------------------------------------------------
+[wpn_mateba_j_custom_p1x42]:wpn_mateba_j_custom
+hud				= wpn_mateba_j_custom_p1x42_hud
+
+inv_weight			= 1.32
+
+1icon_layer			    = p1x42_x
+1icon_layer_x			= 9
+1icon_layer_y			= -38  
+
+[wpn_mateba_j_custom_p1x42_hud]:wpn_mateba_j_custom_hud
+item_visual                 = anomaly_weapons\wpn_mateba_j\wpn_mateba_j_p1x42_hud.ogf
+anm_reload_misfire          = mateba_j_unjam_alt, unjam
+
+        aim_hud_offset_pos               = -0.073728, -0.02233, -0.06
+        aim_hud_offset_pos_16x9          = -0.073728, -0.02233, -0.06
+        aim_hud_offset_rot               = -0.032301, 0.00916, -0.0005
+        aim_hud_offset_rot_16x9          = -0.032301, 0.00916, -0.0005
+;-----------------------------------------------------------------------------------------------------
+[wpn_mateba_j_custom_rmr]:wpn_mateba_j_custom
+hud				= wpn_mateba_j_custom_rmr_hud
+
+inv_weight			= 1.2
+
+1icon_layer			    = rmr_x
+1icon_layer_x			= 5
+1icon_layer_y			= -27  
+
+[wpn_mateba_j_custom_rmr_hud]:wpn_mateba_j_custom_hud
+item_visual                 = anomaly_weapons\wpn_mateba_j\wpn_mateba_j_rmr_hud.ogf
+anm_reload_misfire          = mateba_j_unjam_alt, unjam
+
+        aim_hud_offset_pos               = -0.07398, -0.008673, -0.06
+        aim_hud_offset_pos_16x9          = -0.07398, -0.008673, -0.06
+        aim_hud_offset_rot               = -0.035621, 0.009411, -0.0005
+        aim_hud_offset_rot_16x9          = -0.035621, 0.009411, -0.0005	
 ;-----------------------------------------------------------------------------------------------------
 [wpn_mateba_j_custom_t12]:wpn_mateba_j_custom
 hud				= wpn_mateba_j_custom_t12_hud
+
 inv_weight			= 1.24
 
-1icon_layer			    = t12
-1icon_layer_x			= 17
-1icon_layer_y			= -31  
-
-	s3ds_reticle_size 	= 1.9
+1icon_layer			    = t12_x
+1icon_layer_x			= 10
+1icon_layer_y			= -35  
 	
 [wpn_mateba_j_custom_t12_hud]:wpn_mateba_j_custom_hud
 item_visual                 = anomaly_weapons\wpn_mateba_j\wpn_mateba_j_t12_hud.ogf
-anm_reload                  = mateba_j_reload_alt, reload_alt
 anm_reload_misfire          = mateba_j_unjam_alt, unjam
-        aim_hud_offset_pos               = -0.071637, -0.027495, -0.064183
-        aim_hud_offset_pos_16x9          = -0.071637, -0.027495, -0.064183
-        aim_hud_offset_rot               = -0.0364, 0.000297, -0.0005
-        aim_hud_offset_rot_16x9          = -0.0364, 0.000297, -0.0005		
-;------------------------------------------------------------------------------------------------
+
+        aim_hud_offset_pos               = -0.073606, -0.011772, -0.06
+        aim_hud_offset_pos_16x9          = -0.073606, -0.011772, -0.06
+        aim_hud_offset_rot               = -0.03552, 0.009294, -0.0005
+        aim_hud_offset_rot_16x9          = -0.03552, 0.009294, -0.0005
+
+;---------------------------------------------------SCOPES---------------------------------------------
+;---------------------------------------------------SCOPES---------------------------------------------		
+;---------------------------------------------------SCOPES---------------------------------------------
 [wpn_mateba_j_custom_leupold]:wpn_mateba_j_custom
 hud					= wpn_mateba_j_custom_leupold_hud
 inv_weight			= 1.62
 
-1icon_layer                              = leupold
-1icon_layer_x                            = 10
-1icon_layer_y                            = -30
+1icon_layer                              = leupold_x
+1icon_layer_x                            = -12
+1icon_layer_y                            = -34
 
 scope_status                                       = 1
 scope_zoom_factor                                  = 15
@@ -561,21 +618,20 @@ scope_dynamic_zoom                                 = on
 	
 [wpn_mateba_j_custom_leupold_hud]:wpn_mateba_j_custom_hud
 item_visual                 = anomaly_weapons\wpn_mateba_j\wpn_mateba_j_leupold_hud.ogf
-anm_reload                  = mateba_j_reload_alt, reload_alt
 anm_reload_misfire          = mateba_j_unjam_alt, unjam
 
-        aim_hud_offset_pos               = -0.072638, -0.005846, -0.128723
-        aim_hud_offset_pos_16x9          = -0.072638, -0.005846, -0.128723
-        aim_hud_offset_rot               = -0.029908, 0.00494, 0.001649
-        aim_hud_offset_rot_16x9          = -0.029908, 0.00494, 0.001649
+        aim_hud_offset_pos               = -0.072443, -0.005828, -0.128723
+        aim_hud_offset_pos_16x9          = -0.072443, -0.005828, -0.128723
+        aim_hud_offset_rot               = -0.029843, 0.004631, 0.0005
+        aim_hud_offset_rot_16x9          = -0.029843, 0.004631, 0.0005
 ;------------------------------------------------------------------------------------------------		
 [wpn_mateba_j_custom_monstrum]:wpn_mateba_j_custom
 hud					= wpn_mateba_j_custom_monstrum_hud
 inv_weight			= 1.62
 
-1icon_layer                              = monstrum
-1icon_layer_x                            = 1
-1icon_layer_y                            = -37
+1icon_layer                              = monstrum_x
+1icon_layer_x                            = 2
+1icon_layer_y                            = -36
 
 scope_status                                       = 1
 scope_zoom_factor                                  = 60
@@ -583,12 +639,33 @@ zoom_rotate_time                                   = 0.25
 
 [wpn_mateba_j_custom_monstrum_hud]:wpn_mateba_j_custom_hud
 item_visual                 = anomaly_weapons\wpn_mateba_j\wpn_mateba_j_monstrum_hud.ogf
-
-anm_reload                  = mateba_j_reload_alt, reload_alt
 anm_reload_misfire          = mateba_j_unjam_alt, unjam
 
         aim_hud_offset_pos               = -0.072503, -0.014937, -0.140436
         aim_hud_offset_pos_16x9          = -0.072503, -0.014937, -0.140436
-        aim_hud_offset_rot               = -0.029967, 0.004725, -0.0005
-        aim_hud_offset_rot_16x9          = -0.029967, 0.004725, -0.0005
+        aim_hud_offset_rot               = -0.029715, 0.004519, -0.0005
+        aim_hud_offset_rot_16x9          = -0.029715, 0.004519, -0.0005
 ;------------------------------------------------------------------------------------------------
+[wpn_mateba_j_custom_march_f_shorty]:wpn_mateba_j_custom
+hud					= wpn_mateba_j_custom_march_f_shorty_hud
+inv_weight			= 1.62
+
+1icon_layer                              = march_f_shorty_x
+1icon_layer_x                            = -7
+1icon_layer_y                            = -35
+
+scope_status                                       = 1
+scope_zoom_factor                                  = 15
+zoom_rotate_time                                   = 0.25
+scope_dynamic_zoom                                 = on
+
+	s3ds_reticle_size 	= 3.4
+	
+[wpn_mateba_j_custom_march_f_shorty_hud]:wpn_mateba_j_custom_hud
+item_visual                 = anomaly_weapons\wpn_mateba_j\wpn_mateba_j_march_f_shorty_hud.ogf
+anm_reload_misfire          = mateba_j_unjam_alt, unjam
+
+        aim_hud_offset_pos               = -0.072596, -0.01439, -0.129
+        aim_hud_offset_pos_16x9          = -0.072596, -0.01439, -0.129
+        aim_hud_offset_rot               = -0.02944, 0.004614, 0.0005
+        aim_hud_offset_rot_16x9          = -0.02944, 0.004614, 0.0005
